@@ -1,11 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
-        <meta charset="UTF-8">
-        <meta property="og:title" content="北車捉迷藏">
-        <meta property="og:description" content="來一起在北車捉迷藏! 點開連結查看內容...">
-    <meta http-equiv="refresh" content="0; url=/v3">
+    <meta charset="UTF-8">
+    <meta property="og:title" content="北車捉迷藏">
+    <meta property="og:description" content="來北車一起捉迷藏! 點擊連結查看規則內容。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北車捉迷藏</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.js" defer></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #475569;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #4f46e5, #2563eb);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .event-details {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            margin-top: -4rem;
+        }
+
+        .event-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .upcoming-events {
+            margin-top: 3rem;
+        }
+
+        .event-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .event-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .event-date {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .event-status {
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        .closed {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .event-details {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to /v1...</p>
+    <div class="hero">
+        <h1>台北車站地下街科技捉迷藏</h1>
+        <p class="subtitle">結合 AirTag 與傳統捉迷藏的創新遊戲體驗</p>
+    </div>
+
+    <div class="container">
+        <div class="event-details">
+            <div class="event-info">
+                <div class="info-card">
+                    <h3>遊戲時長</h3>
+                    <p>約 40 分鐘</p>
+                </div>
+                <div class="info-card">
+                    <h3>參與人數</h3>
+                    <p>建議 6-10 人</p>
+                </div>
+                <div class="info-card">
+                    <h3>活動地點</h3>
+                    <p>台北車站 地下街<br>K區、M區、B1區域</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <a href="rules.html" class="cta-button">查看完整規則</a>
+            </div>
+
+            <div class="upcoming-events">
+                <h2>近期場次</h2>
+                <div class="event-list">
+
+                    <div class="event-item">
+                        <div>
+                            <div class="event-date">2024/12/7 (六) 16:00-17:00</div>
+                            <div>剩餘名額：10人</div>
+                        </div>
+                        <span class="event-status">報名中，請洽TG @nelsongx</span>
+                    </div>
+
+<!--                     
+                    <div class="event-item">
+                        <div>
+                            <div class="event-date">2024/11/24 (日) 10:00-11:00</div>
+                            <div>名額已滿</div>
+                        </div>
+                        <span class="event-status closed">已截止</span>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+</html>
