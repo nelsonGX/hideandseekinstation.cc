@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北車站地下街科技捉迷藏規則</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #475569;
+            --accent: #f97316;
+            --background: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: var(--background);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #4f46e5, #2563eb);
+            color: white;
+        }
+
+        .intro-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+        }
+
+        .feature strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .warning {
+            background: #fee2e2;
+            padding: 1rem;
+            border-left: 4px solid #ef4444;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>台北車站地下街科技捉迷藏規則</h1>
+        </div>
+    </header>
+
+    <main class="container" x-data="{ activeSection: null }">
+        <div class="card fade-in intro-section">
+            <p>結合科技與傳統捉迷藏的創新玩法，在台北車站地下街展開一場刺激的躲藏冒險！透過 AirTag 與 iPhone 的定位功能，讓躲藏與搜尋變得更加有趣。遊戲保持安全與秩序的前提下，為玩家們帶來獨特的遊戲體驗。</p>
+            <div class="intro-features">
+                <div class="feature">
+                    <strong>📱 科技輔助</strong>
+                    <p>運用 AirTag 與 iPhone 定位功能</p>
+                </div>
+                <div class="feature">
+                    <strong>🏃‍♂️ 實地探索</strong>
+                    <p>體驗台北車站地下街的獨特空間</p>
+                </div>
+                <div class="feature">
+                    <strong>🤝 團隊合作</strong>
+                    <p>考驗默契與策略的團體活動</p>
+                </div>
+            </div>
+        </div>
+        <div class="card fade-in">
+            <h2>玩家分組</h2>
+            <ul>
+                <li>躲藏組與尋找組玩家對等數量</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>遊戲範圍與時間</h2>
+            <h3>範圍限制</h3>
+            <ul>
+                <li>限定在K區、M區、B1區域</li>
+                <li>禁止進入：
+                    <ul>
+                        <li>月台與車廂</li>
+                        <li>商家內部</li>
+                        <li>緊急逃生通道</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>時間設定</h3>
+            <ul>
+                <li>躲藏時間：<span class="highlight">1分鐘</span></li>
+                <li>尋找時限：<span class="highlight">30分鐘</span></li>
+                <li>避開人潮尖峰時段</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>定位設置</h2>
+            <ol>
+                <li>每位躲藏者配戴一個 <span class="highlight">AirTag</span></li>
+                <li>每位躲藏者需帶著一個 <span class="highlight">iPhone</span></li>
+                <li>遊戲前需完成：
+                    <ul>
+                        <li>AirTag 綁定至尋找者的iPhone</li>
+                        <li>開啟精確尋找功能</li>
+                        <li>躲藏者的 iPhone 分享定位給尋找者，以使用 live 定位功能</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="card fade-in">
+            <h2>遊戲規則</h2>
+            <h3>躲藏方</h3>
+            <ol>
+                <li>需隨身攜帶AirTag</li>
+                <li>不可故意誤導或分開放置AirTag</li>
+                <li>僅使用視覺辨識尋找方，不可使用 iPhone 看定位</li>
+            </ol>
+            <h3>尋找方</h3>
+            <ol>
+                <li>可同時使用視覺與「尋找」App搜尋</li>
+                <li>必須實際碰觸到躲藏者才算找到</li>
+                <li>不可以觸發 AirTag 警報</li>
+            </ol>
+        </div>
+
+        <div class="card fade-in">
+            <h2>安全規定</h2>
+            <div class="warning">
+                <ol>
+                    <li>不得妨礙：
+                        <ul>
+                            <li>商家營業</li>
+                            <li>公共通道</li>
+                            <li>他人通行</li>
+                        </ul>
+                    </li>
+                    <li>發現危險立即中止遊戲</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card fade-in">
+            <h2>勝利條件</h2>
+            <ul>
+                <li>躲藏組勝利：時限結束前未被全數找到</li>
+                <li>尋找組勝利：時限內找到所有躲藏者</li>
+            </ul>
+        </div>
+
+        <div class="card fade-in">
+            <h2>獎懲制度</h2>
+            <ul>
+                <li>勝利方可選擇任一餐廳</li>
+                <li>失敗方必須請客，不超過<span class="highlight">500塊台幣</span></li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            anime({
+                targets: '.fade-in',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+                delay: anime.stagger(200),
+                easing: 'easeOutQuad'
+            });
+        });
+    </script>
+</body>
+</html>
